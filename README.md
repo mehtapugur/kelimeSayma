@@ -1,2 +1,2 @@
 # kelimeSayma
-Metindeki kelimeleri dinamik olarak sayıp büyükten küçüğe doğru bağlı listeye ekleyen program
+Metindeki kelimeleri sırasıyla saymaya başlayıp dinamik olarak bağlı listeye büyükten küçüğe doğru ekleyen program
