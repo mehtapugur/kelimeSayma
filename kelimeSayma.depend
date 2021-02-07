@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1609855611 source:c:\users\mehtap uður\desktop\prolab\3.proje\kelimesayma\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<stdbool.h>
+
