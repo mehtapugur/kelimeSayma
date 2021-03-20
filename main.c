@@ -56,9 +56,7 @@ void basaEkle(char *s, int n)
     tmp->sayi = n;
     tmp->next = head;
     tmp->kac = 0;
-
-    head = tmp; //baþtaki eleman tmp ye eşit
-    //printf("%d tane : %s\n",head->sayi, head->word);
+    head = tmp; //baştaki eleman tmp ye eşit
 }
 int k = 0;
 void arayaEkle(char *s, int n)
@@ -68,7 +66,6 @@ void arayaEkle(char *s, int n)
     strcpy(tmp3->word,s);
     tmp3->sayi = n;
     tmp3->kac = k;
-
     q = head;
 
     while(q->next->sayi >= n)
@@ -80,8 +77,6 @@ void arayaEkle(char *s, int n)
     tmp4 = q->next;
     q->next = tmp3;
     tmp3->next = tmp4;
-    //printf("%d tane : %s\n",tmp3->sayi,tmp3->word);
-
 }
 
 void sonaEkle(char *s)
@@ -104,7 +99,6 @@ void sonaEkle(char *s)
             temp = temp->next;
         }
         temp->next = tmp2;
-        //printf("%d tane : %s\n",tmp2->sayi,tmp2->word);
     }
 }
 int no = 1;
@@ -125,14 +119,12 @@ void listele()
                 i++;
             }
         }
-
         liste = liste->next;
     }
 }
 
 void myList()
 {
-
     struct node *list = head;
     struct node *onceki = NULL;
     struct node *sonraki = NULL;
@@ -160,7 +152,6 @@ void myList()
     sonrakix = listx->next->next;
     free(listx->next);
     oncekix->next = sonrakix;
-
 }
 
 void listMyList()
@@ -177,7 +168,6 @@ void listMyList()
 
 int main()
 {
-
     FILE *dosya = fopen("kelimeler.txt", "r+");
 
     if(dosya == NULL)
@@ -199,9 +189,6 @@ int main()
             head->sayi = kelimeSay(str);
             basaEkle(str,head->sayi);
             count++;
-            //printf("\n(%d.) Liste:\n", no);
-            //listele();
-            //printf("\n");
             sonaEkle(ssm);
         }
         else
@@ -215,26 +202,17 @@ int main()
                 if(kelimeSay(str)==1)
                 {
                     sonaEkle(str);
-                   /* printf("\n(%d.) Liste:\n", no);
-                    listele();
-                    printf("\n"); */
 
                 }
                 else if(kelimeSay(str) >= head->sayi)
                 {
                     int n = kelimeSay(str);
                     basaEkle(str,n);
-                   /* printf("\n(%d.) Liste:\n", no);
-                    listele();
-                    printf("\n"); */
                 }
                 else
                 {
                     int m = kelimeSay(str);
                     arayaEkle(str,m);
-                   /* printf("\n(%d.) Liste:\n", no);
-                    listele();
-                    printf("\n"); */
                 }
             }
         }
